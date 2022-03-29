@@ -101,6 +101,6 @@ app.get("/api/v1/anime/get-episode/:id/:episodeId", function (req, res) {
     });
 });
 
-app.listen(port, () => {
-    console.log(`app running on port ${port}`);
+const server = app.listen(process.env.PORT || 8081, () => {
+    console.log(`app running on port ${process.env.PORT || 8081}`);
 });
