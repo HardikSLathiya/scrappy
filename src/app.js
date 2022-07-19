@@ -222,8 +222,10 @@ app.post("/api/v1/anime/delete", validate("deleteAnime"), function (req, res) {
 
 // Configuring Public Pages
 app.use("/", express.static("public"));
+app.use("/anime", express.static("public"));
 app.use("/anime/list", express.static("public"));
 app.use("/anime/watch/:id", express.static("public"));
+app.use("/anime/watch/:id/:episodeId", express.static("public"));
 
 const server = app.listen(process.env.PORT || 8081, () => {
     console.log(`app running on port ${process.env.PORT || 8081}`);
