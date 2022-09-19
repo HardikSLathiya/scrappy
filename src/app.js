@@ -228,7 +228,6 @@ app.post('/api/v1/hotstar/save-token', async function (req, res) {
         const body = req.body;
 
         await db.ref('hotstar/tokens').set({
-            phone: body.phone,
             token: body.token,
             deviceId: body.deviceId,
         });
